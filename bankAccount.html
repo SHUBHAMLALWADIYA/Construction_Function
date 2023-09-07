@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account</title>
+</head>
+<body>
+    <script>
+
+        function BankAccount(accountnumber,name,type,balance,isActive){
+
+            this.accountnumber=accountnumber;
+            this.name=name;
+            this.type=type;
+            this.balance=balance;
+            this.isActive=isActive;
+
+            this.deposite=function(amount){
+                this.balance+=amount;
+                console.log(this.balance);
+            }
+
+            this.whithDraw=function(amount){
+
+                if(this.balance>=amount){
+                    this.balance-=amount;
+                    console.log(this.balance);
+                }
+                else{
+                    console.log(`In sufficient balance : ${this.balance} `);
+                    alert ("balance bdhao phele")
+                }
+            }
+
+            this.isActive=function(){
+
+                if(this.balance<=0){
+
+                    alert(" Account is not active ");
+                }
+                else{
+
+                    alert("Account is Active with full of money  "+this.balance);
+                }
+            }
+        }
+
+        let acc1=new BankAccount(54545454454,"Shivaji The Boss","current",10000,true);
+
+        let acc2=new BankAccount(54545450000,"Raju","saving",150,true);
+
+        let acc3=new BankAccount(1111111111,"BabuRao","saving",0,false);
+
+
+        let allAccount = [acc1,acc2,acc3];
+
+        function TotalMoneyinBank(allAccount){
+
+            let total=0;
+
+            allAccount.map(ele=> {
+                
+                     total+=ele.balance;
+            });
+            console.log(total);
+            
+        }
+
+
+        TotalMoneyinBank(allAccount);
+        acc1.isActive();
+        acc1.whithDraw(500000000);
+        acc3.isActive();
+        acc2.deposite(200000);
+       
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+
+
+
+function Author(name,birthyear,Nationality){
+
+
+this.name=name;
+this.birthyear=birthyear;
+this.Nationality=Nationality;
+
+
+}
+
+let author1= new Author("Ironman",1995,"American")
+let author2= new Author("Thor",1990,"USA")
+let author3= new Author("Vision",1900,"London")
+let author4= new Author("Dr strange",1985,"England")
+
+
+
+function Book(title,author,gener,price){
+
+
+    this.title=title;
+    this.authorname=author.name;
+    this.gener=gener;
+    this.price=price;
+
+    this.Bookinfo=function(){
+
+        console.log("Title : "+this.title);
+        console.log("Author : "+this.authorname);
+        console.log("Gener : "+this.gener);
+        console.log("Price : "+this.price);
+
+    }
+
+
+}
+
+
+
+let newbook1 =new Book("housfull",author1,"comedy",500);
+let newbook2 =new Book("Harry Portter",author2,"crime",1000);
+let newbook3 =new Book(" One piese",author3,"si-fi",1500);
+let newbook4 =new Book("Nagin ",author4,"adventure",1100);
+
+let allAuthor=[author1,author2,author3,author4];
+let allBook=[newbook1,newbook2,newbook3,newbook4];
+
+
+
+for(let i=0;i<allAuthor.length;i++){
+
+    console.log("Author name :   "+allAuthor[i].name+ " ,   book name :     "+allBook[i].title);
+}
+
+
+
+newbook1.Bookinfo();
+
+
+
+</script>
+</html>
